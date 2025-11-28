@@ -1,0 +1,151 @@
+
+# Commands to navigate the file system
+
+pwd
+ls
+cd Desktop
+cd .
+cd ..
+cd Desktop
+cd ~
+cd Desktop
+
+# Check setup
+
+git --version
+nano
+
+# Configuration settings (only need to set these once)
+
+git config --global user.name “<name>”
+git config --global user.email <email>
+git config --global core.editor “nano”
+git config --global core.autocrlf input 	# for mac/linux
+git config --global core.autocrlf true		# for windows
+git config --list
+
+# Get information about a command
+
+git <command> -h
+git <command> --help
+
+# Create git repo
+
+pwd
+git init
+
+# Add to staging area and commit
+
+git status
+git add day1_script.r
+git status
+git commit -m "Add day1 file"
+
+# Check git history
+
+git log
+git log --oneline
+git log day1_script.r
+
+# Exercise: add to staging area and commit
+
+git status
+git add day2_script.r
+git status
+git commit -m "Add day2 file"
+git log
+git status
+git add day2_script.r
+git commit 
+git log
+
+# Move files with command line
+
+ls
+pwd
+cd ..
+pwd
+ls
+mv gapminder_data.csv continent_stats.csv Workshop_Material
+ls
+pwd
+cd Workshop_Material
+pwd
+ls
+
+# Create new empty file with command line
+
+touch notes.txt
+ls
+
+# Create .gitignore file
+
+touch .gitignore
+ls
+ls -A
+nano .gitignore		# open file in text editor to edit file
+less .gitignore		# visualise content file in terminal
+git status
+git add .gitignore notes.txt
+git status
+git commit -m "Add gitignore and notes file"
+git log
+
+# Extra git commands
+
+nano notes.txt		# open file in text editor
+git status
+git diff
+git add notes.txt
+git status
+git diff
+git diff --staged
+git diff --staged notes.txt
+git status
+git commit -m "Add commands in notes"
+git log
+git blame day2_script.r
+
+# Branches
+
+git branch
+git branch new_feature
+git branch
+git checkout new_feature
+git branch
+nano notes.txt
+less notes.txt
+git status
+git add notes.txt
+git status
+git commit -m "Add branch command"
+git log
+git branch
+git checkout master
+git log
+git branch
+git merge new_feature
+git log
+git branch -m master main
+git log
+
+# Connect remote/cloud/GitHub repo to local repo
+
+git remote add origin git@github.com:MA-Ramirez/WorkshopComputing25.git
+git branch -M main
+git push -u origin main
+
+# Resulting GitHub repo
+https://github.com/MA-Ramirez/WorkshopComputing25.git
+
+# Update cloud repo with changes from local repo
+
+git push
+
+# Update local repo with changes from cloud repo
+
+git pull
+
+# Copy a cloud repo into your computer
+
+git clone <https/ssh of repo>
